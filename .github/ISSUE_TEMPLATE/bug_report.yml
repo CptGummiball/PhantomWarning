@@ -1,0 +1,117 @@
+name: Bug report
+description: The warning icon shows when it should not, does not show when it should, is misplaced, or the game crashes.
+labels: ["bug", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Please read the "Limits" section of the [README](https://github.com/CptGummiball/PhantomWarning#limits-honest-list) first.
+
+  - type: dropdown
+    id: minecraft
+    attributes:
+      label: Minecraft version
+      description: The Phantom Warning jar name contains the Minecraft version (or range) it is made for.
+      options:
+        - "26.3"
+        - "other (write it below)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: loader
+    attributes:
+      label: Loader
+      options:
+        - Fabric
+        - NeoForge
+    validations:
+      required: true
+
+  - type: input
+    id: versions
+    attributes:
+      label: Phantom Warning jar and loader version
+      description: The exact file name of the Phantom Warning jar, and the Fabric Loader + Fabric API or NeoForge version.
+      placeholder: "phantomwarning-1.0.0+mc26.3-fabric.jar, Fabric Loader 0.20.1, Fabric API 0.166.2+26.3"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Where does it happen?
+      options:
+        - Singleplayer
+        - Dedicated server (multiplayer)
+        - LAN / integrated server
+        - Not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Area
+      multiple: true
+      options:
+        - Icon shows although it should not
+        - Icon missing although it should show
+        - Icon position / looks / GUI scale
+        - Inventory entry
+        - Settings file
+        - Disconnect or error on a server
+        - Crash
+        - Other
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Describe what you saw. Did you sleep or die recently? Which dimension? Singleplayer or which server software?
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: The smaller the setup, the faster it can be fixed. Screenshots help a lot.
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: mods
+    attributes:
+      label: Other mods
+      description: The full mod list, or at least the mods involved (with versions). Write "none" for a clean install.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs and crash report
+      description: |
+        Please upload `logs/latest.log` and, if there was a crash, the file from `crash-reports/` (drag and drop into this field, or link a paste site). Server problems: the server log.
+      placeholder: Drop files here or paste a link.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I use the Phantom Warning jar whose name contains my Minecraft version, for my loader.
+          required: true
+        - label: I searched the existing issues for this problem.
+          required: true

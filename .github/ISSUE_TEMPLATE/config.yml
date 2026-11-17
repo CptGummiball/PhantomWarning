@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: README (how it works, settings, limits)
+    url: https://github.com/CptGummiball/PhantomWarning#readme
+    about: How the warning works and what it cannot know.
